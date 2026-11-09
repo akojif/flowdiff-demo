@@ -106,8 +106,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        660,
-        200
+        700,
+        220
       ],
       "parameters": {}
     }
