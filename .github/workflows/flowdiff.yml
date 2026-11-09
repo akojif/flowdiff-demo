@@ -1,0 +1,35 @@
+# Comments on pull requests with a readable diff of the n8n workflow files.
+name: flowdiff
+
+on:
+  pull_request:
+    paths: ['workflows/**']
+
+permissions:
+  contents: read
+  pull-requests: write # to post the comment
+
+concurrency:
+  group: flowdiff-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # flowdiff diffs from the merge base
+
+      - id: flowdiff
+        uses: akojif/flowdiff@main
+        with:
+          # Fails the check when a pull request changes how a workflow behaves.
+          fail-on: behavior
+
+      - name: Show the Action's outputs
+        if: always()
+        run: |
+          echo "changed: ${{ steps.flowdiff.outputs.changed }}"
+          echo "behavior: ${{ steps.flowdiff.outputs.behavior }}"
+          echo "report-path: ${{ steps.flowdiff.outputs['report-path'] }}"

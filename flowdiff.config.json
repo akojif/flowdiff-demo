@@ -1,0 +1,4 @@
+{
+  "instanceUrl": "https://n8n.example.com",
+  "workflowsDir": "workflows"
+}
