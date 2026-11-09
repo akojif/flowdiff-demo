@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0 # flowdiff diffs from the merge base
 
       - id: flowdiff
-        uses: akojif/flowdiff@fb5a83e1c5e25dcfa001858331df5928038e4c11 # pre-release test; runs flowdiff 0.1.1
+        uses: akojif/flowdiff@v0
         with:
           # Fails the check when a pull request changes how a workflow behaves.
           fail-on: behavior
