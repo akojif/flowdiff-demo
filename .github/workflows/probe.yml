@@ -12,4 +12,7 @@ jobs:
         env:
           INPUT_FAIL-ON: behavior
           INPUT_FAIL_ON: behavior
-        run: node -e 'console.log("hyphen name reaches node:", process.env["INPUT_FAIL-ON"] ?? "(missing)"); console.log("underscore name reaches node:", process.env.INPUT_FAIL_ON ?? "(missing)")'
+        run: |
+          echo "/bin/sh is $(readlink -f /bin/sh)"
+          node -e 'console.log("direct  | hyphen:", process.env["INPUT_FAIL-ON"] ?? "(missing)", "| underscore:", process.env.INPUT_FAIL_ON ?? "(missing)")'
+          npm exec --yes -- node -e 'console.log("npm exec | hyphen:", process.env["INPUT_FAIL-ON"] ?? "(missing)", "| underscore:", process.env.INPUT_FAIL_ON ?? "(missing)")'
