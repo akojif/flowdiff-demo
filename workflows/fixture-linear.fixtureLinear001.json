@@ -16,7 +16,7 @@
     },
     {
       "id": "11111111-1111-4111-8111-000000000002",
-      "name": "Set Defaults",
+      "name": "Prepare Request",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
@@ -58,7 +58,8 @@
             }
           ]
         },
-        "options": {}
+        "options": {},
+        "sendBody": false
       }
     }
   ],
@@ -67,14 +68,14 @@
       "main": [
         [
           {
-            "node": "Set Defaults",
+            "node": "Prepare Request",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set Defaults": {
+    "Prepare Request": {
       "main": [
         [
           {
