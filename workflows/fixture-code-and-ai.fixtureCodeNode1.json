@@ -24,7 +24,7 @@
         0
       ],
       "parameters": {
-        "jsCode": "const items = $input.all();\n\nfor (const item of items) {\n  item.json.total = item.json.price * item.json.quantity;\n}\n\nreturn items;\n"
+        "jsCode": "const items = $input.all();\n\nfor (const item of items) {\n  item.json.total = item.json.price * item.json.quantity;\n}\n\nreturn items.filter((item) => item.json.total > 0);\n"
       }
     },
     {
