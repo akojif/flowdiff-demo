@@ -2,7 +2,7 @@
 
 A live demo of the [flowdiff](https://github.com/akojif/flowdiff) GitHub Action, using made-up n8n workflows.
 
-**See it in action:** the open [sample pull request](https://github.com/akojif/flowdiff-demo/pull/1) and the comment the Action posted on it.
+**See it in action:** the open [sample pull request](https://github.com/akojif/flowdiff-demo/pull/3) and the comment the Action posted on it.
 
 ## The red check is on purpose
 
